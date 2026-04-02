@@ -241,7 +241,7 @@ image::interface/interface-1.jpg[]
 ===== Параметры запроса
 Указываются в body:
 
-[cols="1,1,1,1,3", options="header"]
+[cols="1,2,3,4", options="header"]
 |===
 | Параметр | Тип | Обязательный | Описание
 | sellerId | integer | да | Идентификатор продавца
@@ -346,7 +346,7 @@ Body:
 * Если данные валидны, то система переходит на следующий шаг.
 * Если данные не валидны, то возвращается ошибка 400.
 
-. *Создание записи в таблице deal*
+5. *Создание записи в таблице deal*
 
 * deal.deal_id = автоинкремент
 * deal.seller_id = input sellerId
@@ -358,7 +358,7 @@ Body:
 * deal.create_date = текущая дата и время
 * deal.update_date = текущая дата и время
 
-. *Создание записи в таблице product*
+6. *Создание записи в таблице product*
 
 * product.product_id = автоинкремент
 * product.product_status = 1 (“attached”)
@@ -366,21 +366,21 @@ Body:
 * product.description =  input deal.products.description (если передан)
 * product.amount = input deal.products.amount (если передан)
 
-. *Создание записи в таблице deal_line*
+7. *Создание записи в таблице deal_line*
 
 * deal_line.deal_line_id = автоинкремент
 * deal_line.deal_id = deal.deal_id
 * deal_line.product_id = product.product_id
 * deal_line.product_count =  count (input deals.products) (если передан)
 
-. *Создание записи в таблице image*
+8. *Создание записи в таблице image*
 
 * image.image_id = автоинкремент
 * image.deal_id = deal.deal_id
 * image.image = input deal.products.images.imageFile (если передан)
 * image.image_name =  input deal.products.images.imageName (если передан)
 
-. *Формирование ответа*
+9. *Формирование ответа*
 
-* Система возвращает ответ с созданным ИД сделки deal.deal_id и код успеха 200.
+* Система возвращает ответ с созданным ИД сделки deal.deal_id на шаге 5 текущего алгоритма и код успеха 200.
 * Если сервис не отвечает, то возвращается ошибка 500.
