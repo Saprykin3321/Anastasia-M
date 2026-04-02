@@ -1,4 +1,8 @@
 = Спецификация консьюмера: DecisionMakingImportService
+:author: Муратова Анастасия
+:revdate: 2026-04-02
+:toc: macro
+:icons: font
 
 toc::[]
 
