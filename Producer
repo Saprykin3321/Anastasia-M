@@ -1,4 +1,4 @@
-= Спецификация продюсера: ResolvedBuyerWinsEvent
+= Спецификация продюсера: DecisionMakingEvent
 :author: Муратова Анастасия
 :revdate: 2026-04-02
 :toc: macro
@@ -8,7 +8,7 @@ toc::[]
 
 == Назначение
 
-Сервис заказов (Dispute Service) публикует событие `ResolvedBuyerWinsEvent` в Kafka после успешного оформления заказа.
+Сервис заказов (Dispute Service) публикует событие `DecisionMakingEvent` в Kafka после успешного оформления заказа.
 Потребителями события являются:
 
 . Сервис сделок (измение статуса сделки)
