@@ -56,7 +56,7 @@
 === 2.2 Описание макетов интерфейса
 Макеты приведены в https://www.figma.com/site/TayLgtwuYoCJZmBIHQqgUL/Untitled?node-id=3-2068&t=mvbfEgpL4YRN8HfT-0/[Figma].
 
-==== Экран списка заказов
+==== Экран создания сделки
 image::Screenshot_3.png[Карточка создания новой сделки]
 
 Описание экранной формы:
